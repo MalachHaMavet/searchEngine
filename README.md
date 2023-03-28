@@ -44,6 +44,6 @@ Java, Maven, JPA, JSOUP, Morphology Library Lucene, SQL, Spring Framework.
 ![images](/images/list.png)
 
 ### 4.	Введите интересующее слово по теме и нажмите на кнопку SEARCH. Наслаждайтесь результатом.
-![images](/images/searching.png)
+![images](/images/sarching.png)
 
 
