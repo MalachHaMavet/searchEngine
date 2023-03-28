@@ -38,12 +38,12 @@ Java, Maven, JPA, JSOUP, Morphology Library Lucene, SQL, Spring Framework.
 ### 1.	В адресной строке браузера наберите localhost:8080. Нажмите на клавиатуре Enter.
 
 ### 2.	Кликните на вкладку SEARCH.
-![image](/images/search.png)
+![images](/images/search.png)
 
 ### 3.	Выберите из списка интересующий вас сайт.
-![image](/images/list.png)
+![images](/images/list.png)
 
 ### 4.	Введите интересующее слово по теме и нажмите на кнопку SEARCH. Наслаждайтесь результатом.
-![image](/images/searching.png)
+![images](/images/searching.png)
 
 
