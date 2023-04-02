@@ -100,7 +100,7 @@ public class IndexingSite implements Runnable {
 
     private void deleteDataFromSite() {
         SitePage sitePage = siteRepository.findByUrl(url);
-        sitePage.setStatusEnum(StatusEnum.INDEXING);
+        sitePage.setStatus(Status.INDEXING);
         sitePage.setName(getName());
         sitePage.setStatusTime(new Date());
         siteRepository.save(sitePage);
@@ -124,7 +124,7 @@ public class IndexingSite implements Runnable {
             indexSearchRepository.saveAll(indexList);
             log.info("Indexing is Done - " + url);
             sitePage.setStatusTime(new Date());
-            sitePage.setStatusEnum(StatusEnum.INDEXED);
+            sitePage.setStatus(Status.INDEXED);
             siteRepository.save(sitePage);
         } else {
             throw new InterruptedException();
@@ -135,7 +135,7 @@ public class IndexingSite implements Runnable {
         SitePage sitePage = new SitePage();
         sitePage.setUrl(url);
         sitePage.setName(getName());
-        sitePage.setStatusEnum(StatusEnum.INDEXING);
+        sitePage.setStatus(Status.INDEXING);
         sitePage.setStatusTime(new Date());
         siteRepository.flush();
         siteRepository.save(sitePage);
@@ -154,7 +154,7 @@ public class IndexingSite implements Runnable {
     private void errorIndexingSite() {
         SitePage sitePage = new SitePage();
         sitePage.setLastError("Stop indexing");
-        sitePage.setStatusEnum(StatusEnum.FAILED);
+        sitePage.setStatus(Status.FAILED);
         sitePage.setStatusTime(new Date());
         siteRepository.save(sitePage);
     }

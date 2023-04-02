@@ -12,7 +12,9 @@ import java.util.Objects;
 @Entity
 @Getter
 @Setter
-@Table(name = "index_search")
+@Table(name = "index_search", indexes = {@Index(
+        name = "page_id_list", columnList = "page_id"),
+        @Index(name = "lemma_id_list", columnList = "lemma_id")})
 @NoArgsConstructor
 public class IndexSearch implements Serializable {
     @Id

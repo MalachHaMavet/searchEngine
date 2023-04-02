@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import searchengine.config.Site;
 import searchengine.config.SitesList;
 import searchengine.model.SitePage;
-import searchengine.model.StatusEnum;
+import searchengine.model.Status;
 import searchengine.parsers.IndexParserInterface;
 import searchengine.parsers.IndexingSite;
 import searchengine.parsers.LemmaParserInterface;
@@ -84,7 +84,7 @@ public class IndexingServiceImpl implements IndexingService {
         siteRepository.flush();
         Iterable<SitePage> siteList = siteRepository.findAll();
         for (SitePage site : siteList) {
-            if (site.getStatusEnum() == StatusEnum.INDEXING) {
+            if (site.getStatus() == Status.INDEXING) {
                 return true;
             }
         }

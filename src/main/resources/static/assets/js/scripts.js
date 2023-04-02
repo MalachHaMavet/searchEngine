@@ -1542,7 +1542,7 @@ var API = function(){
                     result.data.forEach(function(page){
                         $content.append('<div class="SearchResult-block">' +
                             '<a href="' + page.site + page.uri +'" target="_blank" class="SearchResult-siteTitle">' +
-                                (!data.siteName ? page.siteName + ' - ': '') +
+                                (!data.site.name ? page.site.name + ' - ': '') +
                                 page.title +
                             '</a>' +
                             '<div class="SearchResult-description">' +

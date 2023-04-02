@@ -94,10 +94,10 @@ public class SearchServiceImpl implements SearchService {
         List<StatisticsSearchDto> result = new ArrayList<>();
 
         for (Page page : pageList.keySet()) {
-            String uri = page.getPath();
             String content = page.getContent();
             SitePage pageSite = page.getSiteId();
             String site = pageSite.getUrl();
+            String uri = pageSite.getUrl() + page.getPath();
             String siteName = pageSite.getName();
             Float absRelevance = pageList.get(page);
 

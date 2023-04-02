@@ -21,7 +21,7 @@ public class SitePage {
     private long id;
 
     @Enumerated(EnumType.STRING)
-    private StatusEnum statusEnum;
+    private Status status;
 
     @Column(name = "status_time")
     private Date statusTime;
@@ -44,7 +44,7 @@ public class SitePage {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SitePage that = (SitePage) o;
-        return id == that.id && statusEnum == that.statusEnum &&
+        return id == that.id && status == that.status &&
                 statusTime.equals(that.statusTime) &&
                 Objects.equals(lastError, that.lastError) &&
                 url.equals(that.url) && name.equals(that.name);
@@ -52,14 +52,14 @@ public class SitePage {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, statusEnum, statusTime, lastError, url, name);
+        return Objects.hash(id, status, statusTime, lastError, url, name);
     }
 
     @Override
     public String toString() {
         return "SitePage{" +
                 "id=" + id +
-                ", status=" + statusEnum +
+                ", status=" + status +
                 ", statusTime=" + statusTime +
                 ", lastError='" + lastError + '\'' +
                 ", url='" + url + '\'' +

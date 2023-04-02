@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "page")
+@Table(name = "page", indexes = {@Index(name = "path_list", columnList = "path")})
 @Setter
 @Getter
 @NoArgsConstructor

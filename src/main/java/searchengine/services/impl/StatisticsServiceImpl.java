@@ -8,7 +8,7 @@ import searchengine.dto.statistics.StatisticsResponseDto;
 import searchengine.dto.statistics.TotalStatisticsDto;
 
 import searchengine.model.SitePage;
-import searchengine.model.StatusEnum;
+import searchengine.model.Status;
 import searchengine.repository.LemmaRepository;
 import searchengine.repository.PageRepository;
 import searchengine.repository.SiteRepository;
@@ -35,12 +35,12 @@ public class StatisticsServiceImpl implements StatisticsService {
     private DetailedStatisticsItemDto getDetailed(SitePage site) {
         String url = site.getUrl();
         String name = site.getName();
-        StatusEnum statusEnum = site.getStatusEnum();
+        Status status = site.getStatus();
         Date statusTime = site.getStatusTime();
         String error = site.getLastError();
         long pages = pageRepository.countBySiteId(site);
         long lemmas = lemmaRepository.countBySitePageId(site);
-        return new DetailedStatisticsItemDto(url, name, statusEnum, statusTime, error, pages, lemmas);
+        return new DetailedStatisticsItemDto(url, name, status, statusTime, error, pages, lemmas);
     }
 
     private List<DetailedStatisticsItemDto> getDetailedList() {
